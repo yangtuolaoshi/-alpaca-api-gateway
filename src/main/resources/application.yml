@@ -1,0 +1,10 @@
+server:
+  port: 6663
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: api_route
+          uri: http://localhost:6661
+          predicates:
+            - Path=/api/**
