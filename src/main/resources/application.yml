@@ -8,3 +8,13 @@ spring:
           uri: http://localhost:6661
           predicates:
             - Path=/api/**
+dubbo:
+  registry:
+    address: nacos://${nacos.address:127.0.0.1}:8848?username=nacos&password=nacos
+  protocol:
+    name: tri
+  application:
+    name: AlpacaApiGatewayApplication
+    logger: slf4j
+  consumer:
+    check: false # 启动时不检查提供者是否可用
